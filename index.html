@@ -9,6 +9,18 @@
 
 <body>
     <script>
+        const press = []
+        const secretCode = 'hello'
+        window.addEventListener('keyup', (e) => {
+            console.log(e);
+            press.push(e.key)
+
+            press.splice(0, press.length - secretCode.length)
+            if (press.join('').includes(secretCode)) {
+                cornify_add();
+            }
+            console.log(press);
+        })
     </script>
 </body>
 
